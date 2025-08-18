@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+
+:root {
+    --laranja-claro: #FF862A;
+    --alto-contraste-fundo: #000000;
+    --alto-contraste-texto: #ffffff;
+    --alto-contraste-link: #ffd700;
+}
+
+body {
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #ffffff;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #CB6D43;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Início */
+.inicio-fundo {
+    background-image: url('img/4965007.jpg');
+    background-size: cover;
+    background-position: right;
+    border-radius: 80px;
+    width: 100%;
+    height: 606px;
+    padding: 40px;
+    margin: 0 auto;
+    position: relative;
+    color: #fff;
+}
+
+.img-inicio {
+    position: absolute;
+    right: 0;
+    top: 18rem;
+    width: 45rem;
+    height: auto;
+}
+
+.esquerda-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.botao-inicio {
+    background-color: var(--laranja-claro);
+    border-radius: 30px;
+    border: none;
+    width: 14em;
+    height: 3em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.display-4 {
+    text-shadow: -5px 5px var(--laranja-claro);
+}
+
+/* Títulos */
+h2 {
+    font-family: 'Lemon', serif;
+    font-size: 2.5em;
+    color: var(--laranja-claro);
+    text-align: center;
+}
+
+/* Formulário */
+#contato {
+    background-image: url('img/4965007.jpg');
+    background-size: cover;
+    padding: 4rem 0;
+}
+
+.formulario {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    max-width: 500px;
+    margin: auto;
+}
+
+.formulario button {
+    background-color: #CB6D43;
+    border: none;
+    padding: 10px;
+    margin-top: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Vídeos */
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.video-item {
+    flex: 1 1 45%;
+    max-width: 500px;
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 280px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-conteudo {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.fechar {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+#botaoMais {
+    margin-top: 1rem;
+    background-color: var(--laranja-claro);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.lista-versiculos {
+    margin-top: 1rem;
+    display: none;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.lista-versiculos.mostrar {
+    display: block;
+}
+
+

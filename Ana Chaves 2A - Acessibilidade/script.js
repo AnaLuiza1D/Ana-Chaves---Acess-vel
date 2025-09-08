@@ -1,51 +1,49 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const botaoDeAcessibilidade = document.getElementById('botao-acessibilidade');
-    const opcoesDeAcessibilidade = document.getElementById('opcoes-acessibilidade');
+// Função autoexecutável para encapsular o código
+(function() {
+  // Seleciona os botões pelo ID
+  const increaseBtn = document.getElementById('increase-font');
+  const decreaseBtn = document.getElementById('decrease-font');
+  const toggleThemeBtn = document.getElementById('toggle-theme');
+  const body = document.body;
 
-    // Toggle para o botão de acessibilidade e suas opções
-    botaoDeAcessibilidade.addEventListener('click', function() {
-        botaoDeAcessibilidade.classList.toggle('rotacao-botao');
-        opcoesDeAcessibilidade.classList.toggle('apresenta-lista');
+  // Define o tamanho de fonte inicial, mínimo e máximo
+  let fontSize = 16; // em pixels
+  const minFontSize = 12;
+  const maxFontSize = 24;
 
-        // Ajusta o atributo aria-expanded para acessibilidade
-        const botaoSelecionado = botaoDeAcessibilidade.getAttribute('aria-expanded') === 'true';
-        botaoDeAcessibilidade.setAttribute('aria-expanded', !botaoSelecionado);
-    });
+  // Função que atualiza o tamanho da fonte no body
+  function updateFontSize() {
+    body.style.fontSize = fontSize + 'px';
+  }
 
-    // Função para aumentar o tamanho da fonte
-    const aumentaFonteBotao = document.getElementById('aumentar-fonte');
-    const diminuiFonteBotao = document.getElementById('diminuir-fonte');
+  // Evento para aumentar o tamanho da fonte
+  increaseBtn.addEventListener('click', () => {
+    if (fontSize < maxFontSize) {
+      fontSize += 2;
+      updateFontSize();
+    }
+  });
 
-    // Função para alternar o contraste
-    const alternaContraste = document.getElementById('alterna-contraste');
+  // Evento para diminuir o tamanho da fonte
+  decreaseBtn.addEventListener('click', () => {
+    if (fontSize > minFontSize) {
+      fontSize -= 2;
+      updateFontSize();
+    }
+  });
 
-    let tamanhoAtualFonte = 1; // Tamanho inicial da fonte
+  // Evento para alternar modo claro/escuro
+  toggleThemeBtn.addEventListener('click', () => {
+    // Adiciona ou remove a classe 'dark-mode' no body
+    const isDark = body.classList.toggle('dark-mode');
 
-    // Aumentar a fonte
-    aumentaFonteBotao.addEventListener('click', function() {
-        tamanhoAtualFonte += 0.1;
-        document.body.style.fontSize = `${tamanhoAtualFonte}rem`;
-    });
+    // Altera o texto do botão de acordo com o estado
+    toggleThemeBtn.textContent = isDark ? 'Modo Claro' : 'Modo Escuro';
 
-    // Diminuir a fonte
-    diminuiFonteBotao.addEventListener('click', function() {
-        tamanhoAtualFonte -= 0.1;
-        document.body.style.fontSize = `${tamanhoAtualFonte}rem`;
-    });
+    // Atualiza atributo aria-pressed para indicar estado
+    toggleThemeBtn.setAttribute('aria-pressed', isDark);
+  });
 
-    // Alternar o contraste
-    alternaContraste.addEventListener('click', function() {
-        document.body.classList.toggle('alto-contraste');
-    });
-
-    // ScrollReveal para animações de rolagem
-    ScrollReveal().reveal('#inicio', { delay: 500 });
-    ScrollReveal().reveal('#tropicalia', { delay: 500 });
-    ScrollReveal().reveal('#galeria', { delay: 500 });
-    ScrollReveal().reveal('#contato', { delay: 500 });
-
-    // Ajuste das transições das imagens e textos no ScrollReveal
-    ScrollReveal().reveal('.img-inicio', { delay: 800, distance: '50px', origin: 'right' });
-    ScrollReveal().reveal('.esquerda-conteudo', { delay: 600, distance: '50px', origin: 'left' });
-    ScrollReveal().reveal('#tropicalia .container', { delay: 700, distance: '50px', origin: 'bottom' });
-});
+  // Define o tamanho inicial da fonte ao carregar
+  updateFontSize();
+})();

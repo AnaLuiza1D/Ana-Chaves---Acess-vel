@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Palavra de Vida</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D2691E;
+            --light-color: #F5DEB3;
+            --dark-color: #4B0082;
+            --text-color: #333;
+            --background-color: #FAF0E6;
+        }
+        
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--light-color) !important;
+            transform: translateY(-2px);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--dark-color);
+            font-weight: 700;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .intro-section {
+            background-color: var(--light-color);
+            padding: 3rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .verse-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .verse-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .verse-reference {
+            color: var(--primary-color);
+            font-style: italic;
+            margin-top: 1rem;
+            text-align: right;
+        }
+        
+        .formulario {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        footer {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            color: var(--light-color);
+            transform: translateY(-3px);
+        }
+        
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .high-contrast {
+            background-color: black !important;
+            color: white !important;
+        }
+        
+        .high-contrast-text {
+            color: yellow !important;
+        }
+        
+        .large-text {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="p-5">
+        <nav class="container d-flex justify-content-between align-items-center">
+            <div class="logo-text">Palavra de Vida</div>
+            <ul class="nav mt-5">
+                <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="#versiculos">Versículos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+            </ul>
+            <div id="acessibilidade" class="menu-acessibilidade"> 
+                <button id="botao-acessibilidade" class="btn btn-primary fw-bold rotacao-botao" aria-expanded="false">acessibilidade</button>
+                <div id="opcoes-acessibilidade" class="opcoes-acessibilidade apresenta-lista">
+                    <button id="aumentar-fonte" class="btn btn-primary fw-bold" aria-label="Aumentar o tamanho da fonte">A+</button>
+                    <button id="diminuir-fonte" class="btn btn-primary fw-bold" aria-label="diminuir o tamanho da fonte">A-</button>
+                    <button id="alterna-contraste" class="btn btn-primary fw-bold" aria-label="Alterna o contraste de cores"> <i class="bi bi-shadows"></i></button>         
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <section id="inicio" class="my-5">
+            <div class="intro-section">
+                <h1 class="display-4 fw-bold text-center">Bem-vindo ao Palavra de Vida</h1>
+                <div class="text-center mb-4">
+                    <span class="fs-1">✝</span>
+                </div>
+                <p class="lead">"Porque a palavra de Deus é viva e eficaz, e mais cortante do que qualquer espada de dois gumes; e penetra até a divisão de alma e espírito, e de juntas e medulas, e é apta para discernir os pensamentos e intenções do coração." - Hebreus 4:12</p>
+                
+                <h2 class="mt-5">Minha Jornada com Deus</h2>
+                <p>Desde que conheci o amor de Deus, minha vida foi completamente transformada. Antes vivia em trevas, mas agora caminho na luz maravilhosa de Cristo Jesus. Cada dia é uma nova oportunidade para experimentar a graça, a misericórdia e o amor incondicional do nosso Pai Celestial.</p>
+                
+                <p>A Palavra de Deus não é apenas um livro, mas o manual para uma vida abundante. Através das Escrituras, encontrei propósito, força nos momentos difíceis, e direção para cada decisão. A Bíblia é o farol que ilumina meu caminho, a âncora que mantém minha alma segura nas tempestades da vida, e o alimento que nutre meu espírito diariamente.</p>
+                
+                <p>Meu maior desejo é compartilhar essa transformação com você. Que através destes versículos, você possa experimentar o mesmo poder transformador que mudou minha vida completamente. Deus tem um plano maravilhoso para sua vida, e Sua Palavra é a chave para desbloquear todas as bênçãos que Ele preparou para você.</p>
+                
+                <div class="text-center mt-4">
+                    <a href="#versiculos" class="btn btn-primary btn-lg fw-semibold">Meditar na Palavra</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="versiculos" class="my-5 pt-6" tabindex="0" aria-label="Seção de versículos bíblicos">
+            <h2 class="text-center mb-5">Versículos que Transformam</h2>
+            
+            <div class="verse-card">
+                <p class="fs-5">"Não se amoldem ao padrão deste mundo, mas transformem-se pela renovação da sua mente, para que sejam capazes de experimentar e comprovar a boa, agradável e perfeita vontade de Deus."</p>
+                <p class="verse-reference">Romanos 12:2</p>
+            </div>
+            
+            <div class="verse-card">
+                <p class="fs-5">"Lâmpada para os meus pés é a tua palavra e luz para o meu caminho."</p>
+                <p class="verse-reference">Salmos 119:105</p>
+            </div>
+            
+            <div class="verse-card">
+                <p class="fs-5">"Jesus respondeu: 'Está escrito: Nem só de pão viverá o homem, mas de toda palavra que procede da boca de Deus'."</p>
+                <p class="verse-reference">Mateus 4:4</p>
+            </div>
+            
+            <div class="verse-card">
+                <p class="fs-5">"Escondi a tua palavra no meu coração, para não pecar contra ti."</p>
+                <p class="verse-reference">Salmos 119:11</p>
+            </div>
+            
+            <div class="verse-card">
+                <p class="fs-5">"Pratiquem o que tenho mandado e sejam abençoados. Pois aquele que considera atentamente a lei perfeita que traz liberdade, e persevera na prática dessa lei, não esquecendo o que ouviu mas praticando-o, será feliz naquilo que fizer."</p>
+                <p class="verse-reference">Tiago 1:25</p>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container p-5 d-flex justify-content-center">
+                <div class="col-md-8 col-lg-10 rounded-5 formulario">
+                    <h2 class="mb-3">Entre em contato</h2>
+                    <p class="mb-4">Tem alguma dúvida sobre a Palavra de Deus ou gostaria de compartilhar um testemunho? Entre em contato conosco!</p>
+                    <form>
+                        <div class="form-group mb-3">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" class="form-control rounded-3 mt-1"
+                                placeholder="Digite seu nome completo">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control rounded-3 mt-1"
+                                placeholder="Digite seu email">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" class="form-control rounded-4 mt-2" rows="4"
+                                placeholder="Escreva sua mensagem"></textarea>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg rounded-pill">Enviar
+                                mensagem</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="text-center p-3 fst-italic">
+        <p>Acesse nossas redes:</p>
+        <a href="#" class="social-icon"><i class="bi bi-whatsapp"></i></a>
+        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+        <p class="mt-3">"E conhecereis a verdade, e a verdade vos libertará." - João 8:32</p>
+        <p>Desenvolvido para glorificar a Deus. Projeto com fins de evangelização.</p>
+    </footer>
+    <script>
+        // Acessibilidade
+        document.getElementById('aumentar-fonte').addEventListener('click', function() {
+            document.body.classList.toggle('large-text');
+        });
+        
+        document.getElementById('diminuir-fonte').addEventListener('click', function() {
+            document.body.classList.remove('large-text');
+        });
+        
+        document.getElementById('alterna-contraste').addEventListener('click', function() {
+            document.body.classList.toggle('high-contrast');
+            document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, a').forEach(element => {
+                element.classList.toggle('high-contrast-text');
+            });
+        });
+    </script>
+</body>
+
+</html>
